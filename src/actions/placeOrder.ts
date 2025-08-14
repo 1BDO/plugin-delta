@@ -63,7 +63,7 @@ export const placeOrderAction: Action = {
       const side = parts.find((p: string) => p === 'buy' || p === 'sell');
       const size = parts.find((p: string) => !isNaN(Number(p)));
       const symbol = findInstrumentInText(text);
-      const price = parts.find((p: string) => p.startsWith('@') || !isNaN(Number(p)))?.replace('@', '');
+      const price = parts[parts.indexOf('at') + 1];  // Get the number after 'at'
 
       if (!side || !size || !symbol) {
         throw new Error('Could not parse order from message. Please specify side, size, and symbol.');
