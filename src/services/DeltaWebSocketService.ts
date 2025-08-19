@@ -94,9 +94,9 @@ export class DeltaWebSocketService extends Service {
   }
 
   static async start(runtime: IAgentRuntime): Promise<DeltaWebSocketService> {
-    const wsUrl = await runtime.getSetting('DELTA_WS_URL') || 'wss://socket.delta.exchange';
-    const apiKey = await runtime.getSetting('DELTA_API_KEY');
-    const apiSecret = await runtime.getSetting('DELTA_API_SECRET');
+    const wsUrl = runtime.getSetting('wsUrl') as string;  // Change from 'WSURL'
+    const apiKey = runtime.getSetting('apiKey') as string;
+    const apiSecret = runtime.getSetting('apiSecret') as string;  // Change from 'APISECRET'
 
     const instance = new DeltaWebSocketService(runtime, wsUrl, apiKey, apiSecret);
     console.log("Delta WebSocket Client started.");
