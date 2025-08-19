@@ -24,25 +24,9 @@ import { executionHealthEvaluator, riskWatchdogEvaluator } from './evaluators/in
 import { DeltaConfig, deltaConfigSchema } from './config/schema';
 
 export const starterPlugin: Plugin = {
-  name: 'delta-exchange',
+  name: 'plugin-delta',
   description: 'A plugin for trading on Delta Exchange',
-  config: {
-    apiKey: process.env.DELTA_API_KEY || '',
-    apiSecret: process.env.DELTA_API_SECRET || '',
-    baseUrl: process.env.DELTA_BASE_URL || 'https://api.delta.exchange',
-    wsUrl: process.env.DELTA_WS_URL || 'wss://socket.delta.exchange',
-    sandbox: process.env.DELTA_SANDBOX === 'true',
-    maxPositionSize: Number(process.env.DELTA_MAX_POSITION_SIZE) || 0,
-    maxOrderSize: Number(process.env.DELTA_MAX_ORDER_SIZE) || 0,
-    defaultLeverage: Number(process.env.DELTA_DEFAULT_LEVERAGE) || 0,
-    enableRiskChecks: process.env.DELTA_ENABLE_RISK_CHECKS === 'true',
-    maxDailyLoss: Number(process.env.DELTA_MAX_DAILY_LOSS) || 0,
-    dailyLossLookbackDays: Number(process.env.DELTA_DAILY_LOSS_LOOKBACK_DAYS) || 0,
-    wsReconnectInterval: Number(process.env.DELTA_WS_RECONNECT_INTERVAL) || 5000,
-    wsMaxReconnectAttempts: Number(process.env.DELTA_WS_MAX_RECONNECT_ATTEMPTS) || 5,
-    wsHeartbeatInterval: Number(process.env.DELTA_WS_HEARTBEAT_INTERVAL) || 30000,
-    symbols: process.env.DELTA_SYMBOLS ? process.env.DELTA_SYMBOLS.split(',') : [],
-  },
+  config: {},
   dependencies: [],
   services: [DeltaWebSocketService, DeltaRestClient],
   actions: [
@@ -87,26 +71,32 @@ export const starterPlugin: Plugin = {
   },
   routes: [],
   tests: [],
-  async init(config: Record<string, string>, runtime: IAgentRuntime) {
-    logger.info('Delta Exchange plugin initialized');
+  async init(config: Record<string, any>, runtime: IAgentRuntime) {
+    logger.info('Initializing Delta Exchange plugin...');
+    
+    // Combine environment variables with the config from the character file
+    const combinedConfig = {
+      apiKey: process.env.DELTA_API_KEY,
+      apiSecret: process.env.DELTA_API_SECRET,
+      baseUrl: process.env.DELTA_BASE_URL,
+      wsUrl: process.env.DELTA_WS_URL,
+      ...config,
+    };
+
     try {
-      const validatedConfig = deltaConfigSchema.parse(config);
-
-      // Set all environment variables at once
+      const validatedConfig = deltaConfigSchema.parse(combinedConfig);
+      
+      // Apply the validated config to the runtime settings
       for (const [key, value] of Object.entries(validatedConfig)) {
-        if (value) {
-          process.env[key] = String(value);
-        }
+        runtime.setSetting(key, value, false);  // Remove .toUpperCase()
       }
-
-      // Services are registered automatically via the 'services' array in the plugin definition.
-      // No need to manually instantiate and register them here.
+      
+      logger.info('Delta Exchange plugin initialized successfully.');
 
     } catch (error) {
       if (error instanceof z.ZodError) {
-        throw new Error(
-          `Invalid plugin configuration: ${error.errors.map((e) => e.message).join(', ')}`
-        );
+        const errorMessages = error.errors.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
+        throw new Error(`Invalid Delta Exchange plugin configuration: ${errorMessages}`);
       }
       throw error;
     }
