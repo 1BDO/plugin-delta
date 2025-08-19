@@ -46,9 +46,13 @@ export class DeltaRestClient extends Service {
   }
 
   static async start(runtime: IAgentRuntime): Promise<DeltaRestClient> {
-    const apiKey = await runtime.getSetting('DELTA_API_KEY');
-    const apiSecret = await runtime.getSetting('DELTA_API_SECRET');
-    const baseUrl = await runtime.getSetting('DELTA_REST_BASE') || 'https://api.delta.exchange';
+    const apiKey = runtime.getSetting('apiKey') as string;
+    const apiSecret = runtime.getSetting('apiSecret') as string;
+    const baseUrl = runtime.getSetting('baseUrl') as string;
+    
+    // Diagnostic logging
+    console.log(`[DeltaRestClient] Initializing with API Key: ${apiKey ? apiKey.substring(0, 4) + '...' : 'Not Found'}`);
+    
     const instance = new DeltaRestClient(runtime, apiKey, apiSecret, baseUrl);
     console.log("Delta REST Client started.");
     return instance;
@@ -488,10 +492,18 @@ export class DeltaRestClient extends Service {
   }
 
   private signRequest(method: string, path: string, query: string, payload: string, timestamp: number): string {
-    const signatureData = method + timestamp + path + query + payload;
+    const signatureData = `${method}${timestamp}${path}${query}${payload}`;
+    
+    // Diagnostic logging
+    console.log(`[DeltaRestClient] Signing data: "${signatureData}"`);
+    
     const hmac = crypto.createHmac('sha256', this.apiSecret);
     hmac.update(signatureData);
-    return hmac.digest('hex');
+    const signature = hmac.digest('hex');
+    
+    console.log(`[DeltaRestClient] Generated Signature: ${signature}`);
+    
+    return signature;
   }
 
   private handleError(error: any): Error {
