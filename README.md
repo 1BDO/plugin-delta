@@ -11,7 +11,7 @@ This plugin equips an Eliza OS agent with the capabilities of a sophisticated tr
 To add the Delta Exchange plugin to your Eliza OS agent, run the following command:
 
 ```bash
-elizaos plugins add @your-npm-username/plugin-delta
+elizaos plugins add @elizaos/plugin-delta
 ```
 
 Then, add the plugin to your character file's `plugins` array:
@@ -51,10 +51,10 @@ Additional trading and risk management parameters can also be configured. See `s
 
 ## Features
 
-- **Complete API Coverage:** Implements all major REST endpoints for trading, account management, and market data.
-- **Real-Time Data:** Includes a WebSocket service for live ticker, order book, and position updates.
-- **Robust Error Handling:** Provides detailed error messages for failed API requests and trading actions.
-- **Configurable Risk Management:** Includes evaluators to monitor execution health and enforce risk parameters.
+-   **Complete API Coverage:** Implements all major REST endpoints for trading, account management, and market data.
+-   **Real-Time Data:** Includes a WebSocket service for live ticker, order book, and position updates.
+-   **Robust Error Handling:** Provides detailed error messages for failed API requests and trading actions.
+-   **Configurable Risk Management:** Includes evaluators to monitor execution health and enforce risk parameters.
 
 ## Security Features
 
@@ -62,6 +62,8 @@ This plugin is designed with security as a top priority. Here are the key securi
 
 -   **HMAC-SHA256 Authentication:** Every private request to the Delta Exchange API is signed using a secure HMAC-SHA256 signature. This ensures that all communication is authenticated and protected from tampering.
 -   **Configuration Validation:** The plugin uses a strict Zod schema to validate all configuration settings at startup. This prevents the agent from running with invalid or missing API credentials, which could lead to security risks or unexpected behavior.
+-   **Scoped API Credentials:** The API key and secret are scoped only to the Delta Exchange and do not grant access to any other systems or personal wallets.
+-   **No Direct Exposure of Secrets:** The plugin is designed to load API credentials from secure environment variables or the agent's character configuration, avoiding the need to hardcode sensitive information in the source code.
 
 ## Actions
 
