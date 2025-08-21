@@ -34,12 +34,18 @@ export default character;
 
 ## Configuration
 
-The plugin requires API credentials for authentication. These can be set in your `.env` file or directly in your character configuration.
+The plugin requires API credentials for authentication. These can be set in your `.env` file. Create a `.env` file in the root of your project and add the following:
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `apiKey` | Your Delta Exchange API key. | ` ` |
-| `apiSecret` | Your Delta Exchange API secret. | ` ` |
+```
+# .env
+
+# Required API credentials
+DELTA_API_KEY=YOUR_API_KEY
+DELTA_API_SECRET=YOUR_API_SECRET
+
+# Optional: Set to true to use the testnet
+DELTA_SANDBOX=false
+```
 
 Additional trading and risk management parameters can also be configured. See `src/config/schema.ts` for a complete list of options.
 
