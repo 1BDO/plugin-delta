@@ -1,4 +1,4 @@
-# Eliza OS Delta Exchange Plugin
+# ElizaOS Plugin-Delta
 
 A comprehensive trading plugin for Eliza OS that provides a complete interface for interacting with the Delta Exchange, including real-time data, order management, and advanced trading features.
 
@@ -60,10 +60,8 @@ Additional trading and risk management parameters can also be configured. See `s
 
 This plugin is designed with security as a top priority. Here are the key security measures in place:
 
--   **HMAC-SHA256 Authentication**: Every private request to the Delta Exchange API is signed using a secure HMAC-SHA256 signature. This ensures that all communication is authenticated and protected from tampering.
--   **Configuration Validation**: The plugin uses a strict Zod schema to validate all configuration settings at startup. This prevents the agent from running with invalid or missing API credentials, which could lead to security risks or unexpected behavior.
--   **Scoped API Credentials**: The API key and secret are scoped only to the Delta Exchange and do not grant access to any other systems or personal wallets.
--   **No Direct Exposure of Secrets**: The plugin is designed to load API credentials from secure environment variables or the agent's character configuration, avoiding the need to hardcode sensitive information in the source code.
+-   **HMAC-SHA256 Authentication:** Every private request to the Delta Exchange API is signed using a secure HMAC-SHA256 signature. This ensures that all communication is authenticated and protected from tampering.
+-   **Configuration Validation:** The plugin uses a strict Zod schema to validate all configuration settings at startup. This prevents the agent from running with invalid or missing API credentials, which could lead to security risks or unexpected behavior.
 
 ## Actions
 
