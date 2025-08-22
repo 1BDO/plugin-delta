@@ -239,7 +239,7 @@ export class DeltaWebSocketService extends Service {
           this.subscribeToPrivateChannels();
         } else {
           console.error('WebSocket authentication failed:', message);
-          logger.error('WebSocket authentication failed:', message);
+          logger.error('WebSocket authentication failed:', JSON.stringify(message));
           this.disconnect();
         }
         break;

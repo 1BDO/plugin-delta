@@ -4,16 +4,16 @@
     "": {
       "name": "plugin-delta",
       "dependencies": {
-        "@elizaos/core": "^1.3.2",
-        "@elizaos/plugin-bootstrap": "1.4.2",
-        "@elizaos/plugin-ollama": "1.2.3",
+        "@elizaos/core": "^1.4.4",
+        "@elizaos/plugin-bootstrap": "^1.4.4",
+        "@elizaos/plugin-ollama": "^1.2.4",
         "@types/bun": "^1.2.19",
         "axios": "^1.11.0",
         "bun": "^1.2.19",
         "zod": "^3.24.4",
       },
       "devDependencies": {
-        "@elizaos/cli": "^1.3.2",
+        "@elizaos/cli": "^1.4.4",
         "@types/bun": "latest",
         "bun-types": "latest",
         "dotenv": "16.4.5",
@@ -49,19 +49,19 @@
 
     "@electric-sql/pglite": ["@electric-sql/pglite@0.3.7", "", {}, "sha512-5c3mybVrhxu5s47zFZtIGdG8YHkKCBENOmqxnNBjY53ZoDhADY/c5UqBDl159b7qtkzNPtbbb893wL9zi1kAuw=="],
 
-    "@elizaos/api-client": ["@elizaos/api-client@1.3.2", "", { "dependencies": { "@elizaos/core": "1.3.2" } }, "sha512-OC3CUwA5kkUANziyutTXmccxlsScxuIpgI05SUnkGIMBRI5ASFwVh+DkqatqTdVnP6lyOhc11FPfq5EkjrkK5w=="],
+    "@elizaos/api-client": ["@elizaos/api-client@1.4.4", "", { "dependencies": { "@elizaos/core": "1.4.4" } }, "sha512-a22LyXHM/o77NZSGhPG921tP/yH8iLQmnIP+MXNd4L8VtVu1x35RdolbPLWQjoc91URqxYcDcdnHsAcM8vG8Sg=="],
 
-    "@elizaos/cli": ["@elizaos/cli@1.3.2", "", { "dependencies": { "@anthropic-ai/claude-code": "^1.0.35", "@anthropic-ai/sdk": "^0.54.0", "@clack/prompts": "^0.11.0", "@elizaos/api-client": "1.3.2", "@elizaos/core": "1.3.2", "@elizaos/plugin-sql": "1.3.2", "@elizaos/server": "1.3.2", "bun": "^1.2.17", "chalk": "^5.3.0", "chokidar": "^4.0.3", "commander": "^14.0.0", "dotenv": "^16.5.0", "fs-extra": "^11.1.0", "globby": "^14.0.2", "https-proxy-agent": "^7.0.6", "ora": "^8.1.1", "rimraf": "6.0.1", "semver": "^7.7.2", "simple-git": "^3.27.0", "tiktoken": "^1.0.18", "tsconfig-paths": "^4.2.0", "type-fest": "^4.41.0", "yoctocolors": "^2.1.1", "zod": "3.24.2" }, "bin": { "elizaos": "dist/index.js" } }, "sha512-p7jx7+BSiGc7B8nu1sRYEO/Z1QtXP8k5vBBQ/SBhhTIEKc4sEUUzM9jpBOYL9YrU9y33VpTzbOI3uLw9rbMKzw=="],
+    "@elizaos/cli": ["@elizaos/cli@1.4.4", "", { "dependencies": { "@anthropic-ai/claude-code": "^1.0.35", "@anthropic-ai/sdk": "^0.54.0", "@clack/prompts": "^0.11.0", "@elizaos/api-client": "1.4.4", "@elizaos/core": "1.4.4", "@elizaos/plugin-sql": "1.4.4", "@elizaos/server": "1.4.4", "bun": "^1.2.17", "chalk": "^5.3.0", "chokidar": "^4.0.3", "commander": "^14.0.0", "dotenv": "^16.5.0", "fs-extra": "^11.1.0", "globby": "^14.0.2", "https-proxy-agent": "^7.0.6", "ora": "^8.1.1", "rimraf": "6.0.1", "semver": "^7.7.2", "simple-git": "^3.27.0", "tiktoken": "^1.0.18", "tsconfig-paths": "^4.2.0", "type-fest": "^4.41.0", "yoctocolors": "^2.1.1", "zod": "3.24.2" }, "bin": { "elizaos": "dist/index.js" } }, "sha512-Os5K6YLijGSnnJPYxe+CBqlEXXhErjxft/2EdjCvNypeWt5dTeO/pnkRR863qCVmYKg0K74CJIR6hXrs8TYw1Q=="],
 
-    "@elizaos/core": ["@elizaos/core@1.3.2", "", { "dependencies": { "@sentry/browser": "^9.22.0", "buffer": "^6.0.3", "crypto-browserify": "^3.12.1", "dotenv": "16.5.0", "events": "^3.3.0", "glob": "11.0.3", "handlebars": "^4.7.8", "js-sha1": "0.7.0", "langchain": "^0.3.15", "pdfjs-dist": "^5.2.133", "pino": "^9.6.0", "pino-pretty": "^13.0.0", "stream-browserify": "^3.0.0", "unique-names-generator": "4.7.1", "uuid": "11.1.0", "zod": "^3.24.4" } }, "sha512-69QKtW4jdXxBy/9rf8Irnvsy+FLWP+glIBsoI3CGRoYi8c86AgMhVZ0YKxm1kezsMm+a3h7yHKRZHSpHUwaUeQ=="],
+    "@elizaos/core": ["@elizaos/core@1.4.4", "", { "dependencies": { "@sentry/browser": "^9.22.0", "buffer": "^6.0.3", "crypto-browserify": "^3.12.1", "dotenv": "16.5.0", "events": "^3.3.0", "glob": "11.0.3", "handlebars": "^4.7.8", "js-sha1": "0.7.0", "langchain": "^0.3.15", "pdfjs-dist": "^5.2.133", "pino": "^9.6.0", "pino-pretty": "^13.0.0", "stream-browserify": "^3.0.0", "unique-names-generator": "4.7.1", "uuid": "11.1.0", "zod": "^3.24.4" } }, "sha512-v5O91dkg5mxgjM1O5TLt2jRgKOsoPBpH2GFg1T2py2IRWK1mPi25m4ndmrSWBvw8PoHR8Z5ymm+wid7FUMzfxA=="],
 
-    "@elizaos/plugin-bootstrap": ["@elizaos/plugin-bootstrap@1.4.2", "", { "dependencies": { "@elizaos/core": "1.4.2", "@elizaos/plugin-sql": "1.4.2", "bun": "^1.2.17" }, "peerDependencies": { "whatwg-url": "7.1.0" } }, "sha512-+8sBFedUr97Nllyb5FCWbJrwd0hw5kEZZ+S8E4sIt4026C0omW3JDQRbb4dquYb12vLASqALc4Hh8tOIjU3WyA=="],
+    "@elizaos/plugin-bootstrap": ["@elizaos/plugin-bootstrap@1.4.4", "", { "dependencies": { "@elizaos/core": "1.4.4", "@elizaos/plugin-sql": "1.4.4", "bun": "^1.2.17" }, "peerDependencies": { "whatwg-url": "7.1.0" } }, "sha512-jxKBs2Itf06olSSzaalAsQXacOq882rQX3sB/8z8bA30JsClgM4DDWrVnJ3WI4MFw46G+9aOzJhA5udrGpItxw=="],
 
-    "@elizaos/plugin-ollama": ["@elizaos/plugin-ollama@1.2.3", "", { "dependencies": { "@ai-sdk/ui-utils": "^1.2.8", "@elizaos/core": "^1.0.0", "ai": "^4.3.9", "js-tiktoken": "^1.0.18", "ollama-ai-provider": "^1.2.0", "tsup": "8.4.0" } }, "sha512-5iEJBbsNTkO5UsLBXoyqDwsWITdW6UP5u67qaCSZgO5+4Zb94D/h8GQ90fIQ9xsF7pEVrLzDz3WdmcxlIqutfA=="],
+    "@elizaos/plugin-ollama": ["@elizaos/plugin-ollama@1.2.4", "", { "dependencies": { "@ai-sdk/ui-utils": "^1.2.8", "@elizaos/core": "^1.0.0", "ai": "^4.3.9", "js-tiktoken": "^1.0.18", "ollama-ai-provider": "^1.2.0", "tsup": "8.4.0" } }, "sha512-UYarYfp8ebA4O+/BQtXWwcpLB5J+t4ThW0xdOcvfze5ZNOU51WMprG5EV8SafbhC/qj2sVFba85IdM+t5C5FEw=="],
 
-    "@elizaos/plugin-sql": ["@elizaos/plugin-sql@1.3.2", "", { "dependencies": { "@electric-sql/pglite": "^0.3.3", "@elizaos/core": "1.3.2", "dotenv": "^16.4.7", "drizzle-kit": "^0.31.1", "drizzle-orm": "^0.44.2", "pg": "^8.13.3" } }, "sha512-4kuQUvUK64XX08x9Xkx0bPi1y+rop9zz8uqMzJWkSYsVnvbgSERnHM9lRd/4FjaDcva2T7zW2yPsFIgF8Z6kDw=="],
+    "@elizaos/plugin-sql": ["@elizaos/plugin-sql@1.4.4", "", { "dependencies": { "@electric-sql/pglite": "^0.3.3", "@elizaos/core": "1.4.4", "dotenv": "^16.4.7", "drizzle-kit": "^0.31.1", "drizzle-orm": "^0.44.2", "pg": "^8.13.3" } }, "sha512-f8grGltIy8+9dEsbmAqkW3YfdLldZjIY4IKkU0I/SX0e+X7BQLQnjNM8Zmxme9PsLTbKrJCXLvk5fd+udG0Ujg=="],
 
-    "@elizaos/server": ["@elizaos/server@1.3.2", "", { "dependencies": { "@elizaos/core": "1.3.2", "@elizaos/plugin-sql": "1.3.2", "@types/express": "^5.0.2", "@types/helmet": "^4.0.0", "@types/multer": "^1.4.13", "dotenv": "^16.5.0", "express": "^5.1.0", "express-rate-limit": "^7.5.0", "helmet": "^8.1.0", "multer": "^2.0.1", "path-to-regexp": "^8.2.0", "socket.io": "^4.8.1" } }, "sha512-Wbu70r+0as+VFhJ7NRyeHJFbYKOlhQfL2YK7fTQVXgK3j9PScZmzgr+bopsMVYAgCPh+kt+zYIPVKwcze0aoww=="],
+    "@elizaos/server": ["@elizaos/server@1.4.4", "", { "dependencies": { "@elizaos/core": "1.4.4", "@elizaos/plugin-sql": "1.4.4", "@types/express": "^5.0.2", "@types/helmet": "^4.0.0", "@types/multer": "^1.4.13", "dotenv": "^16.5.0", "express": "^5.1.0", "express-rate-limit": "^7.5.0", "helmet": "^8.1.0", "multer": "^2.0.1", "path-to-regexp": "^8.2.0", "socket.io": "^4.8.1" } }, "sha512-v4+bB7hnBvwJzV4aW0ztHHr46TGrF1zAoEYXZUrRx8KQizZq1kx4P3J0qwuMZHd5BlZztRcfBpIXdxEL4DYouA=="],
 
     "@esbuild-kit/core-utils": ["@esbuild-kit/core-utils@3.3.2", "", { "dependencies": { "esbuild": "~0.18.20", "source-map-support": "^0.5.21" } }, "sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ=="],
 
@@ -1051,10 +1051,6 @@
 
     "@elizaos/core/dotenv": ["dotenv@16.5.0", "", {}, "sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg=="],
 
-    "@elizaos/plugin-bootstrap/@elizaos/core": ["@elizaos/core@1.4.2", "", { "dependencies": { "@sentry/browser": "^9.22.0", "buffer": "^6.0.3", "crypto-browserify": "^3.12.1", "dotenv": "16.5.0", "events": "^3.3.0", "glob": "11.0.3", "handlebars": "^4.7.8", "js-sha1": "0.7.0", "langchain": "^0.3.15", "pdfjs-dist": "^5.2.133", "pino": "^9.6.0", "pino-pretty": "^13.0.0", "stream-browserify": "^3.0.0", "unique-names-generator": "4.7.1", "uuid": "11.1.0", "zod": "^3.24.4" } }, "sha512-Zl71HfYwX5iu4P2B4t73aUhfEhBRuiMELDZ/12EuuGnN/q3GfBSYmhbAxwuE5WFL7zfiDaJbzhGvWzZpNpPa1A=="],
-
-    "@elizaos/plugin-bootstrap/@elizaos/plugin-sql": ["@elizaos/plugin-sql@1.4.2", "", { "dependencies": { "@electric-sql/pglite": "^0.3.3", "@elizaos/core": "1.4.2", "dotenv": "^16.4.7", "drizzle-kit": "^0.31.1", "drizzle-orm": "^0.44.2", "pg": "^8.13.3" } }, "sha512-b/wagp8Njmh8XnWAsuomsGIDl90uKy46HypmNK1tNVI4l8HEDu2Q/oxICptqZOhSeiASpW2deh7iViYaNAbg/A=="],
-
     "@elizaos/plugin-ollama/tsup": ["tsup@8.4.0", "", { "dependencies": { "bundle-require": "^5.1.0", "cac": "^6.7.14", "chokidar": "^4.0.3", "consola": "^3.4.0", "debug": "^4.4.0", "esbuild": "^0.25.0", "joycon": "^3.1.1", "picocolors": "^1.1.1", "postcss-load-config": "^6.0.1", "resolve-from": "^5.0.0", "rollup": "^4.34.8", "source-map": "0.8.0-beta.0", "sucrase": "^3.35.0", "tinyexec": "^0.3.2", "tinyglobby": "^0.2.11", "tree-kill": "^1.2.2" }, "peerDependencies": { "@microsoft/api-extractor": "^7.36.0", "@swc/core": "^1", "postcss": "^8.4.12", "typescript": ">=4.5.0" }, "optionalPeers": ["@microsoft/api-extractor", "@swc/core", "postcss", "typescript"], "bin": { "tsup": "dist/cli-default.js", "tsup-node": "dist/cli-node.js" } }, "sha512-b+eZbPCjz10fRryaAA7C8xlIHnf8VnsaRqydheLIqwG/Mcpfk8Z5zp3HayX7GaTygkigHl5cBUs+IhcySiIexQ=="],
 
     "@elizaos/plugin-sql/dotenv": ["dotenv@16.6.1", "", {}, "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="],
@@ -1144,10 +1140,6 @@
     "wrap-ansi-cjs/string-width": ["string-width@4.2.3", "", { "dependencies": { "emoji-regex": "^8.0.0", "is-fullwidth-code-point": "^3.0.0", "strip-ansi": "^6.0.1" } }, "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="],
 
     "wrap-ansi-cjs/strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
-
-    "@elizaos/plugin-bootstrap/@elizaos/core/dotenv": ["dotenv@16.5.0", "", {}, "sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg=="],
-
-    "@elizaos/plugin-bootstrap/@elizaos/plugin-sql/dotenv": ["dotenv@16.6.1", "", {}, "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="],
 
     "@esbuild-kit/core-utils/esbuild/@esbuild/android-arm": ["@esbuild/android-arm@0.18.20", "", { "os": "android", "cpu": "arm" }, "sha512-fyi7TDI/ijKKNZTUJAQqiG5T7YjJXgnzkURqmGj13C6dCqckZBLdl4h7bkhHt/t0WP+zO9/zwroDvANaOqO5Sw=="],
 
