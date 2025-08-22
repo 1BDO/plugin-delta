@@ -1,4 +1,4 @@
-# ElizaOS Plugin-Delta
+## ElizaOS Plugin-Delta
 
 A comprehensive trading plugin for Eliza OS that provides a complete interface for interacting with the Delta Exchange, including real-time data, order management, and advanced trading features.
 
